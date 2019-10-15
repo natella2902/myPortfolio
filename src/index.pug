@@ -200,9 +200,9 @@ html(lang="en")
                     - var socials = [{"icon": "insta", "link": "insta"}, {"icon": "vk", "link": "vk"}, {"icon": "github", "link": "github"}]
                         ul.socials
                           each item in socials
-                            li.socials__item
+                            li.socials__item__footer
                               a(href=item.link).ss__footer
-                                +icon(item.icon, 'socials__icon')
+                                +icon(item.icon, 'socials__icon__footer')
                 .footers__desc-rt
                   .footers__desc-rt__text
                     |Всегда пишите код так, будто сопровождать его будет склонный к насилию

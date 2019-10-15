@@ -1,5 +1,11 @@
 .btn__scroll_down {
     display: flex;
+    cursor: pointer;   
+    &:hover {
+        color: white;
+        transition: 1s;  
+    }
+
 }
 
 .scroll_down {
@@ -7,6 +13,12 @@
     margin: 0 auto;
     height: 30px;
     fill: #464d62;
+     
+    &:hover {
+        fill: white; 
+        transition: 1s;   
+    }
+
 }
 
 .scroll_down__desc {
@@ -26,6 +38,11 @@
 
     background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
     border-radius: 40px 5px;
+
+        &:hover {
+            background-image: linear-gradient(to left, #9300e8 0%, #4a00ed 100%);
+            transition: 3s;
+        }
 
     margin-top: 60px;
 }
