@@ -7,6 +7,10 @@
     margin-bottom: 100px;    
 }
 
+.feedback__top {
+    display: flex;
+}
+
 .feedback__slider {
     position: relative;
 }
@@ -91,9 +95,7 @@
 }
 
 .slider__feedback__buttons {
-    position: absolute;
-    top: -150px;
-    right: 300px;
+    margin-left: 120px;
 }
 
 .slider__feedback-button {
@@ -113,6 +115,11 @@
       &:last-child {
           margin-right: 0;
       }
+
+    &:hover {
+        background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
+       
+    }
 }
 
 .arrow_fb {

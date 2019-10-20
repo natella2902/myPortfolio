@@ -1,3 +1,7 @@
+.user {
+    margin-bottom: 60px;
+}
+
 .user-info {
     display: block;
     flex-direction: column;
@@ -5,13 +9,17 @@
 
 .user-info__desc {
     display: block;
-
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
-
     max-width: 161px;
     text-align: center;
+
+    @include desktop() {
+        text-align: end;
+        margin-bottom: 60px;
+        margin-right: 60px;
+    }
 }
 
 .user-info__username {
@@ -20,6 +28,10 @@
     line-height: 60px;
     max-width: 460px;
     text-align: center;
+
+    @include desktop() {
+        text-align: start;      
+    }
 }
 
 .avatar {
