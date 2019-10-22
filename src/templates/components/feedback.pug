@@ -1,0 +1,26 @@
+script(type="text/x-template")#feedback-list
+  section.section.feedback
+    .container
+      .feedback__top
+        h2.title.title__feedback Что обо мне говорят
+        .slider__feedback__buttons
+          .slider__feedback-button
+            button(type="button").slider-fb-buttons__item.slider-fb-buttons__item--slide--prev
+              +icon('arrow-down', 'arrow_fb' ) 
+            button(type="button").slider-fb-buttons__item.slider-fb-buttons__item--slide--next
+              +icon('arrow-down', 'arrow_fb' ) 
+      .feedback__slide
+        ul.feedback__list 
+          swiper(ref="mySwiper" :options="swiperOptions")
+            feedback-item(v-for="item in comments" :item="item" :key="item.id" )
+             
+script(type="text/x-template")#feedback-item
+  swiper-slide
+    li.feedback__item  {{ item.id }}
+      p.feedback__item-desc  {{ item. text }}
+      .feedback__item-pers 
+        .item-pers__img
+          img(:src="item.avatar" alt="").item-pers__img-pic
+        .item-pers__desc 
+          h3.title__item-pers__desc {{ item.autor }}
+          span.item-pers__desc-text {{ item.position }}

@@ -1,0 +1,17 @@
+section.section.form__section
+  .container 
+    h2.title.title__form  Связаться со мной
+    form.form__tag
+      .form__row
+        label.form__block.form__block__user
+          .title__form__block Введите ваше имя
+          input(type="text", name="name", placeholder="Ковальчук Дмитрий").form__input.form-field
+        label.form__block.form__block__pensil
+          .title__form__block Введите ваш email
+          input(type="text", name="email", placeholder="loftschool@study.com").form__input.form-field
+      .form__row
+        label.form__block.form__block__message
+          .title__form__block Сообщение к письму
+          input.form__input.form-field(type="text", name="comments", 
+          placeholder="Требуется ваша помощь в создании сайта.  Интересуют сроки и цена вопроса")
+      button(type="submit").btn.form__btn Отправить

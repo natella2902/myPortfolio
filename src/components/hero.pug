@@ -1,0 +1,29 @@
+section.section.hero
+  .container.hero__container
+    header.hero__header
+      .hero__logo
+        .logo НЖ
+      .hero__menu  
+        nav.nav
+          - var items = ["Главное", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+          ul.nav__list
+            each item in items
+              li.nav__item
+                +link('#', item)(class="nav__link")
+      .socials.hero__socials
+        - var icons = ['insta', 'vk', 'github']
+          ul.socials
+            each item, ndx in icons
+              li.socials__item(class=`${index === 1 ? 'active' : ''}`)
+                a(href=item.link).socials__link
+                  +icon(`${item}`, 'socials__icon')
+    .hero__content
+      h1.user-info__desc Личный сайт
+        | 
+        br 
+        |веб разработчика
+      .user-info__username Наталья Желонкина
+    .hero__btns
+      .btn__scroll_down
+        a(href='#').scroll_down__desc Скролл
+          +icon('scroll', 'scroll_down') 

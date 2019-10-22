@@ -1,8 +1,9 @@
 script(type="text/x-template")#slider-container
   .works-slider
     display(
-      :works = "works",
+      :works = "works"
       :current-work = "currentWork"
+      :current-index = "currentIndex"
       @slide="handleSlide"
     )      
     info(
@@ -10,7 +11,7 @@ script(type="text/x-template")#slider-container
     )
 
 script(type="text/x-template")#slider-display
-  .works-slider__pics(data-slide="1")
+  .works-slider__pics(:data-slide="currentIndex + 1")
     .work-slider__pics-content
       .work-slider__fullpic-container
         img(:src="currentWork.photo" v-if="currentWork" ).slider__fillpic
@@ -43,7 +44,9 @@ script(type="text/x-template")#slider-btns
 
 script(type="text/x-template")#slider-info 
   .work-desc
-    tags()
+    tags(
+      :tags = "tagsArray"
+    )
     h3.title.title__job-rt {{ currentWork.title }}
     p.job-rt__desc {{ currentWork.desc }}
     .job-rt__link-cont
@@ -51,6 +54,5 @@ script(type="text/x-template")#slider-info
 
 script(type="text/x-template")#slider-tags
   ul.tags__list
-    each item in [ 'HTML', 'CSS', 'Javascript'] 
-      li.tag__item
-        span.tag__name #{item}
+    li.tag__item(v-for="tag in tags" :key="tag")
+      span.tag__name {{ tag }}

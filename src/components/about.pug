@@ -1,0 +1,22 @@
+section.section.about
+  .container.about__container
+    .about-lft
+      .user
+        .avatar.user__avatar
+          +image('content/user.jpg', 'avatar__pic')
+      - var user__desc = [{"key": "Проживаю:", "value": "Санкт-Петербург"}, {"key": "Возраст:", "value": "35 лет"}, {"key": "Родилась:", "value": "29 февраля"}]
+      ul.user__desc 
+        each item in user__desc
+          li.user__desc__item
+            .user__desc__key= item.key
+            .user__desc__value= item.value
+    .about-rt
+      h4.about-rt__desc Привет, меня зовут
+      h2.about__desc__title Наталья Желонкина
+      .about-rt__desc
+        |Я занимаюсь разработкой современных сайтов и приложений. 
+        |Мне нравится делать интересные и современные проекты.
+      p.about-rt__ps 
+        | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+        |Чуть позже я освежу в нём свой контент. 
+        |А пока посмотрите, как тут всё классно и красиво!

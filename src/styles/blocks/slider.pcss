@@ -1,24 +1,31 @@
+.works-slider {
+    position: relative;
+}
+
+.works-slider__pics {
+    &:before {
+        content: attr(data-slide);
+        font-size: 400px;
+        font-weight: 800;
+        line-height: 48px;
+        color: #e6e6e6;
+        display: block;
+        width: 225px;
+        height: 285px;
+              
+        position: absolute;
+        top: 200px;
+        right: 350px;
+
+        z-index: -5;
+    }
+    
+}
+
 .work-slider__pics-content {
     position: relative; 
     width: 100%;
     height: 550px;  
-    
-        &:before {
-            content: "4";
-            font-size: 400px;
-            font-weight: 800;
-            line-height: 48px;
-            color: #e6e6e6;
-            display: block;
-            width: 225px;
-            height: 285px;
-                  
-            position: absolute;
-            top: 200px;
-            right: -150px;
-
-            z-index: -5;
-        }
         
 }
 
