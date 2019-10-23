@@ -19,18 +19,16 @@ new Vue({
     feedbackItem,
     swiper,
   },
-  props: ["swiperOptions"],
   data: {
     comments: [ ],
-    swiperOption: {
+    swiperOptions: {
       slidesPerView: 2,
       spaceBetween: 30,
-      slidersPerGroup: 2,
-      loop: true,
+      slidesPerGroup: 2,
       navigation: {
         nextEl: '.slider-fb-buttons__item--slide--next',
         prevEl: '.slider-fb-buttons__item--slide--prev',
-        disabledClass: '.slider-fb-buttons--disabled'
+        disabledClass: 'slider-fb-buttons--disabled'
       },
       breakpoints: {
         480: {

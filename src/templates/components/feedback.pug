@@ -12,12 +12,12 @@ script(type="text/x-template")#feedback-list
       .feedback__slide
         ul.feedback__list 
           swiper(ref="mySwiper" :options="swiperOptions")
-            feedback-item(v-for="item in comments" :item="item" :key="item.id" )
+            feedback-item(v-for="item in comments" :item="item" )
              
 script(type="text/x-template")#feedback-item
   swiper-slide
-    li.feedback__item  {{ item.id }}
-      p.feedback__item-desc  {{ item. text }}
+    li.feedback__item 
+      p.feedback__item-desc  {{ item.text }}
       .feedback__item-pers 
         .item-pers__img
           img(:src="item.avatar" alt="").item-pers__img-pic
