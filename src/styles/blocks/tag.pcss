@@ -1,6 +1,11 @@
 .tags__list {
     display: flex;
     justify-content: space-between;
+
+    @include tablets() {
+        justify-content: center;
+
+    }
    
 }
 
@@ -11,6 +16,14 @@
     background-color: #859fc2;;
     border-radius: 23px;
     display: block;
+
+    @include tablets() {
+        margin-right: 15px;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
    
 }
 
@@ -23,7 +36,10 @@
    
 }
 
-.job-rt .tags__list {
-    margin-top: 150px;
+.work-desc .tags__list {
     margin-bottom: 50px;
+
+    @include tablets() {
+        margin-bottom: 30px;
+    }
 }

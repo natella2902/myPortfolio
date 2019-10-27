@@ -3,6 +3,8 @@
 }
 
 .works-slider__pics {
+ 
+
     &:before {
         content: attr(data-slide);
         font-size: 400px;
@@ -11,13 +13,32 @@
         color: #e6e6e6;
         display: block;
         width: 225px;
-        height: 285px;
-              
+        height: 285px;     
         position: absolute;
         top: 200px;
         right: 350px;
-
         z-index: -5;
+
+        
+        @include desktop() {
+            width: 160px;
+            height: 220px;     
+            top: 110px;
+            right: 380px;
+        }
+
+        
+        @include tablets() {
+            font-size: 300px;
+            top: 80px;
+            right: -30px;
+        
+        }
+
+        @include phones() {
+            display: none;
+        }
+
     }
     
 }
@@ -26,6 +47,19 @@
     position: relative; 
     width: 100%;
     height: 550px;  
+    
+    @include desktop() {
+        height: 350px;
+    }
+    @include tablets() {
+        width: 90%;
+        height: 350px;
+    } 
+
+    @include phones {
+        width: 100%;
+        height: 100%;
+    }
         
 }
 
@@ -38,6 +72,20 @@
     position: absolute;
     right: 0;
     bottom: 0px;
+
+    
+    @include desktop() {
+        bottom: -60px;
+    }
+
+    @include tablets() {
+        bottom: -70px;
+    }
+
+    @include phones() {
+        display: none;
+    }
+    
 }
 
 .works-slider__thumbs .active {
@@ -59,6 +107,19 @@
     position: absolute;
     right: 0;
     bottom: -50px;
+
+        
+    @include desktop() {
+        bottom: -110px;
+    }
+
+    @include tablets() {
+        bottom: -120px;
+    }
+
+    @include phones() {
+        bottom: 0;
+    }
 }
 
 .slider-button {
@@ -69,7 +130,6 @@
     width: 50px;
     height: 50px;
     display: block;
-    border: 2px solid green;
     background-color: $text-color;
 
         &:hover {

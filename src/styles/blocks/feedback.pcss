@@ -1,14 +1,23 @@
+
 .feedback .container {
     flex-direction: column;
     justify-content: center;
 }
 
 .title__feedback {
-    margin-bottom: 100px;    
+    margin-bottom: 100px;   
+    
+    @include phones(){
+        margin-bottom: 30px;
+    } 
 }
 
 .feedback__top {
-    display: flex;
+    display: flex; 
+    @include phones() {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 .feedback__slider {
@@ -22,6 +31,7 @@
 
 .feedback__item {
     max-width: 330px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,9 +39,13 @@
     position: relative;
     
     margin: 0 100px;
+
       &:last-child {
           margin-right: 0;
-      }
+        }
+    @include tablets() {
+        margin: 0 50px;
+    }
 
     &::before {
   
@@ -47,6 +61,12 @@
         position: absolute;
         top: 0;
         left: -100px;
+
+        @include tablets() {
+            width: 30px;
+            height: 30px;
+            left: -40px;
+        }
     }
    
 }
@@ -70,8 +90,14 @@
     height: 75px;
     overflow: hidden;
     border-radius: 50%;
-
     margin-right: 30px;
+
+    @include phones() {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
 }
 
 .item-pers__img-pic {
@@ -85,6 +111,10 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 48px;
+
+    @include phones() {
+        line-height: 30px;
+    }
 }
 
 .item-pers__desc-text {
@@ -96,6 +126,11 @@
 
 .slider__feedback__buttons {
     margin-left: 120px;
+
+    @include phones(){
+        margin: 0 auto 30px auto;
+    }
+
 }
 
 .slider__feedback-button {

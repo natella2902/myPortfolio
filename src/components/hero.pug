@@ -17,6 +17,10 @@ section.section.hero
               li.socials__item(class=`${index === 1 ? 'active' : ''}`)
                 a(href=item.link).socials__link
                   +icon(`${item}`, 'socials__icon')
+      button.hamburger(type='button')#hamburger
+        .hamburger__top-line
+        .hamburger__middle-line
+        .hamburger__low-line
     .hero__content
       h1.user-info__desc Личный сайт
         | 
@@ -25,5 +29,5 @@ section.section.hero
       .user-info__username Наталья Желонкина
     .hero__btns
       .btn__scroll_down
-        a(href='#').scroll_down__desc Скролл
+        a(type="button").scroll_down__desc Скролл
           +icon('scroll', 'scroll_down') 

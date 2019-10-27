@@ -47,10 +47,10 @@ script(type="text/x-template")#slider-info
     tags(
       :tags = "tagsArray"
     )
-    h3.title.title__job-rt {{ currentWork.title }}
-    p.job-rt__desc {{ currentWork.desc }}
-    .job-rt__link-cont
-      a(:href="currentWork.link").job-rt__link Посмотреть сайт
+    h3.title.title__work-sub {{ currentWork.title }}
+    p.work-sub {{ currentWork.desc }}
+    .work-sub__link-cont
+      a(:href="currentWork.link").work-sub__link Посмотреть сайт
 
 script(type="text/x-template")#slider-tags
   ul.tags__list

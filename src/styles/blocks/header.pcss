@@ -2,15 +2,28 @@
     display: flex;
     justify-content: space-between;
     padding-top: 60px;
+
 }
 
-
+.hero__header .hero__socials {
+    @include phones() {
+        display: none;
+    }
+}
 
 .hero__socials {
     width: 15%;
     fill: #464d62;
- 
+
+    @include tablets() {
+        margin-left: 360px;
+        fill: #464d62;
+    }
+
+  
 }
+
+
 
 .hero__logo {
    width: 10%;

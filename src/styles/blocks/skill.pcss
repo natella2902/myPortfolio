@@ -1,5 +1,12 @@
 .skill .container {
-    margin: auto auto;
+    margin: 0 auto;
+
+    @include tablets() {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 .skill-lft {
@@ -10,12 +17,28 @@
      @include desktop() {
         width: 30%;
         margin-right: 60px;
-}
+    }
+
+    @include phones() {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
 .skill-lft__img {
     width: 720px;
     height: 630px;
+        
+    @include tablets() {
+        width: 315px;
+        height: 281px;
+    }
+
+    @include phones() {
+        width: 270px;
+        height: 240px;
+    }
+    
 }
 
 .skill-lft__img-pic {
@@ -23,6 +46,14 @@
     width: 100%;
     height: 100%;
     background: url("~images/content/backpack.png") center no-repeat;
+              
+    @include tablets() {
+        background-size: contain;
+    }
+
+    @include phones() {
+       background-size: cover;
+    }
 }
 
 .skill-rt {
@@ -30,11 +61,31 @@
     flex-direction: column;
     justify-content: baseline;
     width: 55%;
+
+          
+    @include tablets() {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
 }
 
 .skill-rt .title__skill {
     font-size: 30px;
     margin: 60px 0;
+      
+    @include tablets() {
+       max-width: 270px;
+       margin: 30px 0;
+    }
+    
+    @include phones(){
+        max-width: 100%;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: start;
+    }
 }
 
 .skill-rt__desc {
@@ -44,6 +95,11 @@
 
     max-width: 600px;
     margin-bottom: 60px;
+
+    @include tablets() {
+        max-width: 500px;
+        text-align: center;
+    }
 }
 
 .skill-chart {
@@ -54,6 +110,10 @@
 
 .skill-rt .skill-chart {
     margin-left: 60px;
+    @Include phones() {
+        margin-left: 0;
+    }
+
 }
 
 .skills-row__title {
@@ -61,13 +121,42 @@
     font-weight: 700;
     line-height: 48px;
     margin-bottom: 30px;
+
+    @include tablets() {
+        font-size: 18px;
+    }
+
+}
+
+.skills-row {
+    @include tablets() {
+        margin-bottom: 30px;
+    }
 }
 
 .skills-row__list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+
+    @include tablets(){
+        grid-gap: 20px;
     }
+
+    @include phones(){
+        grid-template-columns: 1fr 1fr;
+        grid-row: auto;
+        grid-gap: 10px;
+    }
+   
+}
+
+.skills-row__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
   .skill_rw {
     position: relative;
@@ -79,13 +168,23 @@
       top: 50%;
       Left: 50%;
       transform: translate(-50%,-50%);
+
+      @include tablets() {
+        font-size: 14px;
+        line-height: 30px; 
+    }
      
   }
 
   .skill__shape {
-    width: 130px;
-    height: 130px;
+    width: 135px;
+    height: 135px;
     fill: transparent;
+
+        @include tablets(){
+            width: 115px;
+            height: 115px;
+        }
     
    
   }

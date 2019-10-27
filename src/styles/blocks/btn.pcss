@@ -1,10 +1,15 @@
 .btn__scroll_down {
     display: flex;
-    cursor: pointer;   
+    cursor: pointer; 
+    background: transparent;  
     
     &:hover {
-       opacity: .1;
+       opacity: .5;
         transition: 1s;  
+    }
+
+    @include phones() {
+        display: none;
     }
 
 }
@@ -33,7 +38,7 @@
     color: white;
     display: block;
     padding: 15px 100px;
-
+    cursor: pointer;
     background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
     border-radius: 40px 5px;
 
@@ -43,4 +48,13 @@
         }
 
     margin-top: 60px;
+
+    @include tablets() {
+        margin: 20px auto;
+    }
+
+    @include phones() {
+        padding: 10px 80px;
+        font-size: 16px;
+    }
 }
