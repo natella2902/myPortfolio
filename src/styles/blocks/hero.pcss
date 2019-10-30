@@ -1,3 +1,9 @@
+.hero__menu {
+    @include tablets() {
+        display: none;
+    }
+}
+
 .hero__container {
    display: flex;
    height: 100%;
@@ -19,6 +25,17 @@
     flex: 1;
     align-items: center;
     justify-content: center;
+
+    @include desktop() {
+        flex-direction: row;
+    }
+
+    
+    @include tablets() {
+        flex-direction: column;     
+    }
+
+
 } 
 
 .hero__btns {

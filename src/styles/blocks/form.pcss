@@ -1,15 +1,24 @@
 .form__section {
     margin: auto 0;
+    
 }
 
 
 .form__section .container {
     flex-direction: column;
     justify-content: center;
+
+    @include tablets() {
+        align-items: center;
+    }
 }
 
 .title__form  {
     margin-bottom: 100px;    
+
+    @include tablets() {
+        margin-bottom: 60px;
+    }
 }
 
 .form__tag {
@@ -17,6 +26,11 @@
     flex-direction: column;
     align-items: flex-start;
     width: 65%;
+
+    @include tablets() {
+        width: 90%;
+    }
+
  }
  
   .form__row {
@@ -27,34 +41,43 @@
      width: 100%;
 
      position: relative;
+
+     @include phones() {
+        flex-direction: column;
+        margin-bottom: 0;
+     }
  
  }
  
  .form__block {
      margin-right: 50px;
+     flex: 1;
+     border-bottom: 1px solid $text-color;
 
         &:last-child {
             margin-right: 0;
         }
 
-     flex: 1;
-     border-bottom: 1px solid $text-color;
+        @include phones() {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
 
 
         &::before {
-            
             content: "";
             display: block;
             width: 30px;
             height: 30px;
-                
             background-size: contain;
             background-repeat: no-repeat;
-        
-        
             position: absolute;
             bottom: 20px;
-            
+
+            @include phones() {
+                display: none;
+            }
+
         }
  }
 
@@ -85,6 +108,15 @@
     color: $text-color;
 
     padding: 5px 50px;
+
+    
+    @include tablets() {
+     font-size: 14px; 
+    }
+
+    @include phones() {
+        padding: 0 30px;
+     }
  }
 
   
@@ -92,23 +124,46 @@
      width: 100%;
      background: transparent;
      border: transparent;
-    
+     outline: none;
      padding: 15px 0;
      margin-left: 50px;
+
+    @include phones() {
+         margin-left: 30px;
+    }
+ }
+
+ .form__textarea { 
+    resize: horizontal;
+    overflow: auto;
+    text-align: start;
+
  }
  
  .form-field::placeholder {
     font-size: 18px;
     font-weight: 700;
     line-height: 48px;
-    line-height: 48px;
     color: $text-color;
     padding: 30px;
+   
+
+    @include tablets() {
+        font-size: 14px;
+        line-height: 24px;
+        padding: 10px;
+    }
+
+    @include phones() {
+        padding: 0;
+        font-size: 14px;
+        line-height: 24px;
+    }
  }
  
 
  .form-field:focus {
-     border-bottom: 1px solid $text-color;
+     border-bottom: 1px solid transparent;
     
  }
  

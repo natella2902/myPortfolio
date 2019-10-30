@@ -1,7 +1,66 @@
-.slider {
+.works-slider {
+    position: relative;
+}
+
+.works-slider__pics {
+ 
+
+    &:before {
+        content: attr(data-slide);
+        font-size: 400px;
+        font-weight: 800;
+        line-height: 48px;
+        color: #e6e6e6;
+        display: block;
+        width: 225px;
+        height: 285px;     
+        position: absolute;
+        top: 200px;
+        right: 350px;
+        z-index: -5;
+
+        
+        @include desktop() {
+            width: 160px;
+            height: 220px;     
+            top: 110px;
+            right: 380px;
+        }
+
+        
+        @include tablets() {
+            font-size: 300px;
+            top: 80px;
+            right: -30px;
+        
+        }
+
+        @include phones() {
+            display: none;
+        }
+
+    }
+    
+}
+
+.work-slider__pics-content {
     position: relative; 
     width: 100%;
-    height: 550px;   
+    height: 550px;  
+    
+    @include desktop() {
+        height: 350px;
+    }
+    @include tablets() {
+        width: 90%;
+        height: 350px;
+    } 
+
+    @include phones {
+        width: 100%;
+        height: 100%;
+    }
+        
 }
 
 .slider__fillpic {
@@ -9,21 +68,58 @@
     height: 100%;
 }
 
-.slider__preview {
+.works-slider__thumbs {
     position: absolute;
     right: 0;
     bottom: 0px;
+
+    
+    @include desktop() {
+        bottom: -60px;
+    }
+
+    @include tablets() {
+        bottom: -70px;
+    }
+
+    @include phones() {
+        display: none;
+    }
+    
 }
 
-.previews__item {
+.works-slider__thumbs .active {
+    border: 3px solid rgba(240, 188, 17, 1);
+}
+
+.works-slider__thumb-item {
     width: 178px;
     height: 100px;
+ 
+        &:hover {           
+            border: 3px solid rgba(240, 188, 17, 1);
+        }
 }
+
+
 
 .slider__buttons {
     position: absolute;
     right: 0;
     bottom: -50px;
+
+        
+    @include desktop() {
+        bottom: -110px;
+    }
+
+    @include tablets() {
+        bottom: -120px;
+    }
+
+    @include phones() {
+        bottom: 0;
+    }
 }
 
 .slider-button {
@@ -35,6 +131,10 @@
     height: 50px;
     display: block;
     background-color: $text-color;
+
+        &:hover {
+            background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
+        }
    
 }
 

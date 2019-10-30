@@ -1,0 +1,36 @@
+footer.footer
+  .container 
+    .footer-lft
+      .copyright &copy;2019
+      .owner
+        .owner-name
+          |Наталья 
+          br
+          |Желонкина
+        .owner-text 
+          |Личный сайт
+          br 
+          |веб-разработчика
+    .footer-rt
+      nav.nav.footer__nav
+        - var items = ["Главное", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+          ul.nav__list
+            each item in items
+              li.nav__item
+                +link('#', item)(class="nav__link")
+      .footer__desc
+        .footer__desc-lft
+          .footer__desc-lft__text
+            |Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+          .socials
+            - var socials = [{"icon": "insta", "link": "insta"}, {"icon": "vk", "link": "vk"}, {"icon": "github", "link": "github"}]
+                ul.socials
+                  each item in socials
+                    li.socials__item__footer
+                      a(href=item.link).ss__footer
+                        +icon(item.icon, 'socials__icon__footer')
+        .footers__desc-rt
+          .footers__desc-rt__text
+            |Всегда пишите код так, будто сопровождать его будет склонный к насилию
+            |психопат, который знает где вы живете
+          span.footers__desc-rt__signature Martin Golding
