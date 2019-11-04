@@ -1,0 +1,29 @@
+script(type="text/x-template")#form-root
+  .form-wrapper 
+    login
+    hr
+    category
+    hr
+    skill
+
+script(type="text/x-template")#form-login
+  form(@submit.prevent="login")
+    input(type="text" placeholder="login" v-model="user.name")
+    input(type="password" placeholder="password" v-model="user.password")
+    input(type="submit")
+
+script(type="text/x-template")#form-category
+  .outer 
+    form(@submit.prevent="createCategory")
+      input(type="text" placeholder="Имя категории" v-model="title" )
+      input(type="submit")
+
+  
+script(type="text/x-template")#form-skill
+  .outer 
+    form()
+      input(type="text" placeholder="Имя скила")
+      input(type="text" placeholder="Процент скила")
+      input(type="submit")
+      
+

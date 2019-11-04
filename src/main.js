@@ -7,3 +7,5 @@ import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/feedback";
 import './scripts/parallax';
+import './scripts/form';
+
