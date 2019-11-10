@@ -8,7 +8,7 @@
           .user__name 
             span Желонкина Наталья
         .header__title Панель администрирования
-      a.exit-btn(@click="logout") Выйти
+      a.exit-btn() Выйти
 </template>
 
 <script>

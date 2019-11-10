@@ -6,16 +6,7 @@
       nav.tabs-container
         app-tabs
       section.content-container
-        app-content
-
-    h1 Welcome to the Vue App
-    inner-comp(
-      placeholder ="Text in placeholder"
-      type = "password"
-      @click = "handleClick"
-
-      msg="no"
-    )
+        router-view
 </template>
 
 <script>
@@ -24,6 +15,8 @@ import header from './components/header'
 import tabs from './components/tabs'
 import content from './components/content'
 import inner from './components/inner'
+
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   name: 'app-root',
@@ -55,7 +48,7 @@ export default {
   grid-template-areas: "header"
                        "nav"
                        "section";
-  grid-template-rows: 80px 80px 500px;
+  grid-template-rows: 80px 80px 1fr;
   grid-template-columns: 1fr;
  
   border: 1px solid red;

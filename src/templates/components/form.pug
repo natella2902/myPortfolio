@@ -3,9 +3,7 @@ script(type="text/x-template")#form-root
     login
     hr
     category
-    hr
-    skill
-
+    
 script(type="text/x-template")#form-login
   form(@submit.prevent="login")
     input(type="text" placeholder="login" v-model="user.name")
@@ -17,13 +15,21 @@ script(type="text/x-template")#form-category
     form(@submit.prevent="createCategory")
       input(type="text" placeholder="Имя категории" v-model="title" )
       input(type="submit")
-
-  
+    ul
+      li(v-for="cat in categories" :key="cat.id") 
+        h3 {{ cat.category }}
+        h3 {{ cat.id }}
+        ol 
+          li(v-for="skill in cat.skills" :key="skill.id") {{ skill.title }}
+        skill(
+          :category-id = "cat.id",
+          @skillAdded="addSkill"
+        )
+   
 script(type="text/x-template")#form-skill
   .outer 
-    form()
-      input(type="text" placeholder="Имя скила")
-      input(type="text" placeholder="Процент скила")
+    form(@submit.prevent="addNewSkill")
+      input(type="text" placeholder="Имя скила" v-model="skill.title")
+      input(type="text" placeholder="Процент скила" v-model="skill.percent")
       input(type="submit")
-      
 

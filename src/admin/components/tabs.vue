@@ -3,24 +3,28 @@
     .container
       ul.tabs
         li.tabs__item(v-for="tab in tabs")
-          a(:href="tab.href" ).tabs__link  {{ tab.title }}
-</template>
+          router-link(
+            :data-text="tab.title" 
+            :to="tab.href"
+          ).tabs__link
 
 <script>
+
 export default {
   data() {
     return {
       tabs: [
-        {title: "Обо мне", href: "/"},
-        {title: "Работы", href: "/"},
-        {title: "Отзывы", href: "/"}
+        { title: "Обо мне", href: "/" },
+        { title: "Отзывы", href: "/reviews" },
+        { title: "Работы", href: "/works" }
       ]
-    }
-  }  
-}
+    };
+  }
+};
+
 </script>
 
-<style lang="postcss">
+<style lang="pcss" scoped>
 
  .tabs-container {
    color: #414c63;
@@ -44,6 +48,13 @@ export default {
     }
 }
 
-
+.tabs__link {
+  
+  &:before {
+    content: attr(data-text);
+  }
+  
+}
+ 
 
 </style>
