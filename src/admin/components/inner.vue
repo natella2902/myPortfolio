@@ -31,6 +31,8 @@
     h2 {{ foo }}
     h2 {{ obj.occ }}
     h2 {{ obj }}
+
+    
  
     
 </template>

@@ -57,12 +57,21 @@ export default {
 .header-container {
   background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
   background-color: #3e3e59;
+  
 }
 
-
-.content-container {
- border: 1px solid green;
+.btn__edit {
+  height: 20px;
+  width: 20px; 
+  background: svg-load('pencil.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;
 }
+
+.btn__del {
+  height: 20px;
+  width: 20px; 
+  background: svg-load('tick.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;
+}
+
 
 /*
   h1 {

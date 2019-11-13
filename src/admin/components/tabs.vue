@@ -7,6 +7,7 @@
             :data-text="tab.title" 
             :to="tab.href"
           ).tabs__link
+</template>
 
 <script>
 

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import axios from "axios";
-import store from "../store"
+import { store } from "../store/index.js"
 
 Vue.use(VueRouter);
 
@@ -11,10 +11,6 @@ const guard = axios.create({
   baseURL
 });
 
-import about from '../components/pages/about.vue'
-import reviews from '../components/pages/reviews.vue'
-import works from '../components/pages/works.vue'
-import login from '../components/pages/login.vue'
 
 const router = new VueRouter({ routes });
 
@@ -39,9 +35,15 @@ router.beforeEach(async (to, from, next) => {
   }
 }); 
 
+import about from '../components/pages/about.vue'
+import reviews from '../components/pages/reviews.vue'
+import works from '../components/pages/works.vue'
+import login from '../components/pages/login.vue'
+
+
 const routes = [
   {
-    path: '',
+    path: '/',
     component: about,
     meta: {
       title: "Блок Обо мне"
