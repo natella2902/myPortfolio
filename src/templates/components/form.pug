@@ -1,0 +1,35 @@
+script(type="text/x-template")#form-root
+  .form-wrapper 
+    login
+    hr
+    category
+    
+script(type="text/x-template")#form-login
+  form(@submit.prevent="login")
+    input(type="text" placeholder="login" v-model="user.name")
+    input(type="password" placeholder="password" v-model="user.password")
+    input(type="submit")
+
+script(type="text/x-template")#form-category
+  .outer 
+    form(@submit.prevent="createCategory")
+      input(type="text" placeholder="Имя категории" v-model="title" )
+      input(type="submit")
+    ul
+      li(v-for="cat in categories" :key="cat.id") 
+        h3 {{ cat.category }}
+        h3 {{ cat.id }}
+        ol 
+          li(v-for="skill in cat.skills" :key="skill.id") {{ skill.title }}
+        skill(
+          :category-id = "cat.id",
+          @skillAdded="addSkill"
+        )
+   
+script(type="text/x-template")#form-skill
+  .outer 
+    form(@submit.prevent="addNewSkill")
+      input(type="text" placeholder="Имя скила" v-model="skill.title")
+      input(type="text" placeholder="Процент скила" v-model="skill.percent")
+      input(type="submit")
+
