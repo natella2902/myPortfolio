@@ -6,7 +6,8 @@
         button(type=button).about-page__add-new Добавить группу
     .about-page__content
       .container.container--mobile-wide
-        form(@submit.prevent="addNewCategory")
+        form(@submit.prevent="addNewCategory").add-cat-wrapper
+          div.error {{ validation.firstError('title') }}
           input(type="text" placeholder="Имя категории" v-model="title" )
           input(type="submit")
         ul.skill-list 
@@ -18,33 +19,46 @@
 </template>
 
 <script>
+
 import { mapActions, mapState } from "vuex";
+import { Validator } from 'simple-vue-validator';
 
 export default {
-  components: {
-    skillsGroup: () => import("../skills-group")
-  },
   data: () => ({
     title: ""
   }),
+  mixins: [require('simple-vue-validator').mixin],
+  validators: { 
+    title: function(value) {
+      return Validator.value(value).required('Поле должно быть заполнено');
+    },
+  },
+  components: {
+    skillsGroup: () => import("../skills-group")
+  },
   created() {
     this.fetchCategories();
   },
   computed: {
     ...mapState("categories", {
       categories: state => state.categories
-    })
+    }),
+    
   },
   methods: {
-      ...mapActions("categories", ["addCategory", "fetchCategories"]),
+    ...mapActions("categories", ["addCategory", "fetchCategories"]),
     async addNewCategory() {
-      try {
-        await this.addCategory(this.title)
+      const success = await this.$validate()
+      if (success) {
+        try {
+          await this.addCategory(this.title);
+        }
+        catch (error) {
+          alert(error.message); }
+      } else {
+        console.log('Не введены данные')
       }
-      catch (error) {
-        alert(error.message);
-      }
-    }
+    }      
   }  
 }
 
@@ -104,10 +118,16 @@ export default {
     background-image: url("~images/content/admin_back.png");
     background-position-x: center;
   }
+
+  .container--mobile-wide{
+    display: grid;
+    
+  }
+
   .skill-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 340px;
+    grid-template-columns: 525px;
+    grid-template-rows: 400px;
     grid-gap: 25px;
   }
 
@@ -115,4 +135,15 @@ export default {
     background: white;  
     border: 1px solid green;
   }
+
+  .error {
+    color: red;
+  }
+
+  .add-cat-wrapper {
+    border: 1px solid green;
+    width: 525px;
+    height: 400px;
+  }
+
 </style>

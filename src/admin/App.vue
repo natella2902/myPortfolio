@@ -60,11 +60,7 @@ export default {
   
 }
 
-.btn__edit {
-  height: 20px;
-  width: 20px; 
-  background: svg-load('pencil.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;
-}
+
 
 .btn__del {
   height: 20px;

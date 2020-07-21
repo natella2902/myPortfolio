@@ -4,7 +4,8 @@
     td {{ skill.percent }}
     td %
     td 
-      button(type="button" @click="editMode=true").btn__edit 
+      button(type="button" @click="editMode=true")
+      svg-icon(:icon-name="'trash'" :class-name="'card__icon--delete'")
     td
       button(type="button" @click="removeExistedSkill").btn__del  
   tr(v-else)
@@ -21,8 +22,14 @@
 </template>
 
 <script>
+import { Validator } from 'simple-vue-validator';
 import { mapActions } from "vuex"
+
 export default {
+  
+  components: {
+    svgIcon: () => import("@/components/svg-icons")
+  },
   data() {
     return {
       editMode: false,
@@ -69,5 +76,12 @@ export default {
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     justify-content: space-around;
   }
+.card__icon--delete {
+  height: 20px;
+  width: 20px; 
+  color: red;
+}
+
+
 
 </style>
