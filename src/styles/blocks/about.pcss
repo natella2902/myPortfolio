@@ -1,27 +1,25 @@
 .about {
-    margin-top: 100px;
-    padding: 105px 0 480px 0;
+    height: 100vh;
     background: linear-gradient(to top, #f8f8fa, #f2f0f7);
     z-index: -5;
 
         @include desktop() {
-            padding-top: 25px;
-            padding-bottom: 210px;
+
         }
 
         @include tablets() {
-            padding-bottom: 198px;
+
         }
 
         @include phones() {
-            margin-top: 0;
-            padding-bottom: 88px;
+
         }
 }
 
 .about__container {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     @include phones() {
         flex-direction: column;
@@ -31,9 +29,11 @@
 .about-lft {
     width: 300px;
     margin-right: 100px;
+
     @include phones() {
         width: 100%;
         margin-bottom: 30px;
+        margin-right: 0px;
     }
 }
 
